@@ -146,7 +146,7 @@ select {
     margin-bottom: 2em;
 }
 
-#content header h2 {
+#content header h1 {
     line-height: 1em;
     font-size: 3em;
 }
@@ -155,7 +155,7 @@ select {
     font-size: 1.40em;
 }
 
-#sidebar h2 {
+#sidebar h1 {
     display: block;
     padding-bottom: 2em;
     font-size: 1.4em;
@@ -188,7 +188,7 @@ select {
     padding: 6em 0em;
 }
 
-#footer h2 {
+#footer h1 {
     padding-bottom: 2em;
     font-size: 1.4em;
 }

@@ -24,6 +24,7 @@ select {
 
 body {}
 
+h1,
 h2,
 h3,
 h4,
@@ -230,7 +231,7 @@ article:first-child {
     margin-bottom: 2em;
 }
 
-#content header h2 {
+#content header h1 {
     line-height: 2em;
     font-size: 1.8em;
 }
