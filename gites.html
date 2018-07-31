@@ -13,18 +13,23 @@
     <script src="js/skel.min.js"></script>
     <script src="js/skel-panels.min.js"></script>
     <script src="js/init.js"></script>
+    <script src="js/details.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="engine1/style.css" />
     <link rel="stylesheet" type="text/css" href="css/portfolio.css" />
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
     <script type="text/javascript" src="engine1/jquery.js"></script>
     <noscript>
             <link rel="stylesheet" href="css/skel-noscript.css" />
 			<link rel="stylesheet" href="css/style.css" />
-			<link rel="stylesheet" href="css/style-desktop.css" />
-		</noscript>
+            <link rel="stylesheet" href="css/style-desktop.css" />
+            <link rel="stylesheet" href="css/details.css" />
+    </noscript>
+    <link href="css/material-kit.css?v=2.0.4" rel="stylesheet" />
     <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
     <!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -150,6 +155,94 @@
         .button:hover {
             background-color: #555;
         }
+        /*
+        
+        Modal image*/
+        /* The Modal (background) */
+        
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.9);
+            /* Black w/ opacity */
+        }
+        /* Modal Content (Image) */
+        
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+        /* Caption of Modal Image (Image Text) - Same Width as the Image */
+        
+        #caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: 150px;
+        }
+        /* Add Animation - Zoom in the Modal */
+        
+        .modal-content,
+        #caption {
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+        
+        @keyframes zoom {
+            from {
+                transform: scale(0)
+            }
+            to {
+                transform: scale(1)
+            }
+        }
+        /* The Close Button */
+        
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /* 100% Image Width on Smaller Screens */
+        
+        @media only screen and (max-width: 700px) {
+            .modal-content {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 
@@ -210,7 +303,7 @@
                                     <p class="title">3 à 6 personnes</p>
                                     <p>3 chambres</p>
                                     <p>3 lits doubles + 2 lits simples</p>
-                                    <p><button class="button">Afficher les détails du gîte</button></p>
+                                    <p><button class="button" onclick="showDetailsMaison()">Afficher les détails du gîte</button></p>
                                 </div>
                             </div>
                         </div>
@@ -223,7 +316,7 @@
                                     <p class="title">3 à 6 personnes</p>
                                     <p>3 chambres</p>
                                     <p>3 lits doubles + 2 lits simples</p>
-                                    <p><button class="button">Afficher les détails du gîte</button></p>
+                                    <p><button class="button" onclick="showDetailsMartin()">Afficher les détails du gîte</button></p>
                                 </div>
                             </div>
                         </div>
@@ -236,9 +329,352 @@
                                     <p class="title">2 personnes</p>
                                     <p>Studio</p>
                                     <p>1 lit double</p>
-                                    <p><button class="button">Afficher les détails du gîte</button></p>
+                                    <p><button class="button" onclick="showDetailsBulle()">Afficher les détails du gîte</button></p>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+
+                    <div class="container bootstrap snippet" style="margin-top:40px; display:none;" id="detailsMaison">
+                        <h3>La Maison du pêcheur</h3>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <ul class="nav nav-pills nav-pills-icons flex-column" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="#amenagement" role="tab" data-toggle="tab">
+                                            <i class="fas fa-couch"></i>Aménagement
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#interieur" role="tab" data-toggle="tab">
+                                            <i class="fas fa-coffee"></i>Équipements Intérieurs
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#exterieur" role="tab" data-toggle="tab">
+                                            <i class="fab fa-gripfire"></i>Équipements Extérieurs
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#services" role="tab" data-toggle="tab">
+                                            <i class="fas fa-chalkboard-teacher"></i> Services
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#aproximite" role="tab" data-toggle="tab">
+                                            <i class="fas fa-street-view"></i>À proximité
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="amenagement">
+                                        <h4>Informations Générales</h4>
+                                        <ul>
+                                            <li>Capacité maximale 6 personnes</li>
+                                            <li>Surface : 131,40 m²</li>
+                                            <li>Altitude : 31,53m</li>
+                                            <li>3 Chambres</li>
+                                            <li>Séjour / Cuisine</li>
+                                            <li>Salle de douche</li>
+                                            <li>Toilettes séparées</li>
+                                            <li>Terrasse</li>
+                                        </ul>
+                                        <h4>Chambre 1</h4>
+                                        <ul>
+                                            <li>1 lit double matrimonial</li>
+                                        </ul>
+                                        <h4>Chambre 2</h4>
+                                        <ul>
+                                            <li>1 lit double matrimonial</li>
+                                            <li>1 lit simple de 90</li>
+                                        </ul>
+                                        <h4>Chambre 3</h4>
+                                        <ul>
+                                            <li>1 lit double matrimonial</li>
+                                            <li>1 lit simple de 90</li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-pane" id="interieur">
+                                        <h4>À votre disposition dans votre gîte</h4>
+                                        <ul>
+                                            <li>Frigidaire</li>
+                                            <li>Lave-Vaisselle</li>
+                                            <li>Lave-Linge</li>
+                                            <li>Cafetière</li>
+                                            <li>Four</li>
+                                            <li>Micro-ondes</li>
+                                            <li>TV</li>
+                                            <li>Draps et linge de toilette inclus</li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-pane" id="exterieur">
+                                        <h4>À votre disposition pour profiter de votre extérieur</h4>
+                                        <ul>
+                                            <li>Terrasse</li>
+                                            <li>Barbecue</li>
+                                            <li>Salon de Jardin</li>
+                                            <li>Chaises-longues</li>
+                                            <li>Parc Arboré</li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-pane" id="services">
+                                        <h4>Nos services pour rendre votre séjour plus agréable</h4>
+                                        <ul>
+                                            <li>Équipements pour bébé (lit, chaise haute, change bébé...)</li>
+                                            <li>Location draps / linge de toilette (inclus dans le prix de la location)</li>
+                                            <li>Chauffage central au gaz</li>
+                                            <li>Forfait ménage en fin de séjour (50€ / séjour)</li>
+                                            <li>Pêche (voir tarifs)</li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-pane" id="aproximite">
+                                        <h4>Profitez de notre situation</h4>
+                                        <ul>
+                                            <li>Randonnée sur place</li>
+                                            <li>Gare - Mont de Marsan (17km)</li>
+                                            <li>Maison Médicale (9,6km)</li>
+                                            <li>Canoë-Kayak (7,8km)</li>
+                                            <li>Piscine (7,8km)</li>
+                                            <li>Saint-Sever, Ville touristique (7km)</li>
+                                            <li>Pêche sur place</li>
+                                            <li>Commerces (9km)</li>
+                                            <li>Tennis (8km)</li>
+                                            <li>Océan &amp; Plages - Hossegor/Capbreton (1h05)</li>
+                                            <li>Frontière espagnole (1h30)</li>
+                                            <li>Pyrénées Atlantiques (1h30)</li>
+                                            <li>Thermes - Dax (40 min)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="container bootstrap snippet" style="margin-top:40px; display:none;" id="detailsMartin">
+                        <h3>Le Martin Pêcheur</h3>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <ul class="nav nav-pills nav-pills-icons flex-column" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="#amenagement2" role="tab" data-toggle="tab">
+                                            <i class="fas fa-couch"></i>Aménagement
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#interieur2" role="tab" data-toggle="tab">
+                                            <i class="fas fa-coffee"></i>Équipements Intérieurs
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#exterieur2" role="tab" data-toggle="tab">
+                                            <i class="fab fa-gripfire"></i>Équipements Extérieurs
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#services2" role="tab" data-toggle="tab">
+                                            <i class="fas fa-chalkboard-teacher"></i> Services
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#aproximite2" role="tab" data-toggle="tab">
+                                            <i class="fas fa-street-view"></i>À proximité
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="amenagement2">
+                                        <h4>Informations Générales</h4>
+                                        <ul>
+                                            <li>Capacité maximale 6 personnes</li>
+                                            <li>Surface : 116,23 m²</li>
+                                            <li>Altitude : 31,53m</li>
+                                            <li>3 Chambres</li>
+                                            <li>Séjour / Cuisine</li>
+                                            <li>Salle de douche</li>
+                                            <li>Toilettes séparées</li>
+                                            <li>Terrasse</li>
+                                        </ul>
+                                        <h4>Chambre 1</h4>
+                                        <ul>
+                                            <li>1 lit double matrimonial</li>
+                                        </ul>
+                                        <h4>Chambre 2</h4>
+                                        <ul>
+                                            <li>1 lit double matrimonial</li>
+                                            <li>1 lit simple de 90</li>
+                                        </ul>
+                                        <h4>Chambre 3</h4>
+                                        <ul>
+                                            <li>1 lit double matrimonial</li>
+                                            <li>1 lit simple de 90</li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-pane" id="interieur2">
+                                        <h4>À votre disposition dans votre gîte</h4>
+                                        <ul>
+                                            <li>Frigidaire</li>
+                                            <li>Lave-Vaisselle</li>
+                                            <li>Lave-Linge</li>
+                                            <li>Cafetière</li>
+                                            <li>Four</li>
+                                            <li>Micro-ondes</li>
+                                            <li>TV</li>
+                                            <li>Draps et linge de toilette inclus</li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-pane" id="exterieur2">
+                                        <h4>À votre disposition pour profiter de votre extérieur</h4>
+                                        <ul>
+                                            <li>Terrasse</li>
+                                            <li>Barbecue</li>
+                                            <li>Salon de Jardin</li>
+                                            <li>Chaises-longues</li>
+                                            <li>Parc Arboré</li>
+                                            <li>Grange pour rangements extérieurs</li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-pane" id="services2">
+                                        <h4>Nos services pour rendre votre séjour plus agréable</h4>
+                                        <ul>
+                                            <li>Équipements pour bébé (lit, chaise haute, change bébé...)</li>
+                                            <li>Location draps / linge de toilette (inclus dans le prix de la location)</li>
+                                            <li>Chauffage et Climatisation réversible</li>
+                                            <li>Forfait ménage en fin de séjour (50€ / séjour)</li>
+                                            <li>Pêche (voir tarifs)</li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-pane" id="aproximite2">
+                                        <h4>Profitez de notre situation</h4>
+                                        <ul>
+                                            <li>Randonnée sur place</li>
+                                            <li>Gare - Mont de Marsan (17km)</li>
+                                            <li>Maison Médicale (9,6km)</li>
+                                            <li>Canoë-Kayak (7,8km)</li>
+                                            <li>Piscine (7,8km)</li>
+                                            <li>Saint-Sever, Ville touristique (7km)</li>
+                                            <li>Pêche sur place</li>
+                                            <li>Commerces (9km)</li>
+                                            <li>Tennis (8km)</li>
+                                            <li>Océan &amp; Plages - Hossegor/Capbreton (1h05)</li>
+                                            <li>Frontière espagnole (1h30)</li>
+                                            <li>Pyrénées Atlantiques (1h30)</li>
+                                            <li>Thermes - Dax (40 min)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="container bootstrap snippet" style="margin-top:40px; display:none;" id="detailsBulle">
+                        <h3>Le Martin Pêcheur</h3>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <ul class="nav nav-pills nav-pills-icons flex-column" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="#amenagement3" role="tab" data-toggle="tab">
+                                            <i class="fas fa-couch"></i>Aménagement
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#interieur3" role="tab" data-toggle="tab">
+                                            <i class="fas fa-coffee"></i>Équipements Intérieurs
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#exterieur3" role="tab" data-toggle="tab">
+                                            <i class="fab fa-gripfire"></i>Équipements Extérieurs
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#services3" role="tab" data-toggle="tab">
+                                            <i class="fas fa-chalkboard-teacher"></i> Services
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#aproximite3" role="tab" data-toggle="tab">
+                                            <i class="fas fa-street-view"></i>À proximité
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="amenagement3">
+                                        <h4>Informations Générales</h4>
+                                        <ul>
+                                            <li>Capacité maximale 2 personnes (+ 1 enfant bas âge)</li>
+                                            <li>Surface : 45 m²</li>
+                                            <li>Altitude : 31,53m</li>
+                                            <li>Studio</li>
+                                            <li>Salle de douche</li>
+                                            <li>Toilettes séparées</li>
+                                        </ul>
+                                        <h4>Pièce principale</h4>
+                                        <ul>
+                                            <li>1 lit double matrimonial</li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-pane" id="interieur3">
+                                        <h4>À votre disposition dans votre gîte</h4>
+                                        <ul>
+                                            <li>Frigidaire</li>
+                                            <li>Lave-Vaisselle</li>
+                                            <li>Lave-Linge</li>
+                                            <li>Cafetière</li>
+                                            <li>Four</li>
+                                            <li>Micro-ondes</li>
+                                            <li>TV</li>
+                                            <li>Draps et linge de toilette inclus</li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-pane" id="exterieur3">
+                                        <h4>À votre disposition pour profiter de votre extérieur</h4>
+                                        <ul>
+                                            <li>Barbecue</li>
+                                            <li>Salon de Jardin</li>
+                                            <li>Chaises-longues</li>
+                                            <li>Parc Arboré</li>
+                                            <li>Local extérieur</li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-pane" id="services3">
+                                        <h4>Nos services pour rendre votre séjour plus agréable</h4>
+                                        <ul>
+                                            <li>Équipements pour bébé (lit, chaise haute, change bébé...)</li>
+                                            <li>Location draps / linge de toilette (inclus dans le prix de la location)</li>
+                                            <li>Chauffage électrique</li>
+                                            <li>Forfait ménage en fin de séjour (50€ / séjour)</li>
+                                            <li>Pêche (voir tarifs)</li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-pane" id="aproximite3">
+                                        <h4>Profitez de notre situation</h4>
+                                        <ul>
+                                            <li>Randonnée sur place</li>
+                                            <li>Gare - Mont de Marsan (17km)</li>
+                                            <li>Maison Médicale (9,6km)</li>
+                                            <li>Canoë-Kayak (7,8km)</li>
+                                            <li>Piscine (7,8km)</li>
+                                            <li>Saint-Sever, Ville touristique (7km)</li>
+                                            <li>Pêche sur place</li>
+                                            <li>Commerces (9km)</li>
+                                            <li>Tennis (8km)</li>
+                                            <li>Océan &amp; Plages - Hossegor/Capbreton (1h05)</li>
+                                            <li>Frontière espagnole (1h30)</li>
+                                            <li>Pyrénées Atlantiques (1h30)</li>
+                                            <li>Thermes - Dax (40 min)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
@@ -249,11 +685,8 @@
 
 
 
-
-
-
                     <div class="container bootstrap snippet" style="margin-top:40px;">
-                        <h2 class="text-center section-title">Quelques photos des gîtes</h2>
+                        <h3 class="text-center section-title">Quelques photos des gîtes</h3>
                         <hr>
                         <section id="portfolio" class="gray-bg padding-top-bottom">
                             <div class="container bootstrap snippet">
@@ -285,8 +718,7 @@
                                                     <h2 class="project-title">Chambre 1</h2>
                                                     <span class="overlay-mask"></span>
                                                 </a>
-                                                <a class="enlarge cboxElement" href="#" title="Bills Project"><i class="fa fa-expand fa-fw"></i></a>
-                                                <a class="link" href="#"><i class="fa fa-eye fa-fw"></i></a>
+                                                <a id="myImg" class="link centered" href="#portfolio"><i class="fa fa-eye fa-fw"></i></a>
                                             </div>
                                         </article>
 
@@ -297,7 +729,7 @@
                                                     <h2 class="project-title">Salle de Bain</h2>
                                                     <span class="overlay-mask"></span>
                                                 </a>
-                                                <a class="link centered" href=""><i class="fa fa-eye fa-fw"></i></a>
+                                                <a id="myImg2" class="link centered" href="#portfolio"><i class="fa fa-eye fa-fw"></i></a>
                                             </div>
                                         </article>
 
@@ -308,8 +740,7 @@
                                                     <h2 class="project-title">Pièce de vie</h2>
                                                     <span class="overlay-mask"></span>
                                                 </a>
-                                                <a class="enlarge centered cboxElement" href="#" title="Get Colored"><i class="fa fa-expand fa-fw"></i></a>
-                                            </div>
+                                                <a id="myImg3" class="link centered" href="#portfolio"><i class="fa fa-eye fa-fw"></i></a> </div>
                                         </article>
 
                                         <article class="col-md-4 col-sm-6 portfolio-item martin">
@@ -319,8 +750,7 @@
                                                     <h2 class="project-title">Chambre 2</h2>
                                                     <span class="overlay-mask"></span>
                                                 </a>
-                                                <a class="enlarge cboxElement" href="#" title="Holiday Selector"><i class="fa fa-expand fa-fw"></i></a>
-                                                <a class="link" href="#"><i class="fa fa-eye fa-fw"></i></a>
+                                                <a id="myImg4" class="link centered" href="#portfolio"><i class="fa fa-eye fa-fw"></i></a>
                                             </div>
                                         </article>
 
@@ -331,8 +761,7 @@
                                                     <h2 class="project-title">Salle de Bain</h2>
                                                     <span class="overlay-mask"></span>
                                                 </a>
-                                                <a class="enlarge cboxElement" href="#" title="Scavenger Hunt"><i class="fa fa-expand fa-fw"></i></a>
-                                                <a class="link" href="#"><i class="fa fa-eye fa-fw"></i></a>
+                                                <a id="myImg5" class="link centered" href="#portfolio"><i class="fa fa-eye fa-fw"></i></a>
                                             </div>
                                         </article>
 
@@ -343,8 +772,7 @@
                                                     <h2 class="project-title">Chambre 3</h2>
                                                     <span class="overlay-mask"></span>
                                                 </a>
-                                                <a class="enlarge cboxElement" href="#" title="Sonor"><i class="fa fa-expand fa-fw"></i></a>
-                                                <a class="link" href="#"><i class="fa fa-eye fa-fw"></i></a>
+                                                <a id="myImg6" class="link centered" href="#portfolio"><i class="fa fa-eye fa-fw"></i></a>
                                             </div>
                                         </article>
                                     </div>
@@ -352,7 +780,17 @@
                             </div>
                         </section>
                     </div>
+                    <div id="myModal" class="modal">
 
+                        <!-- The Close Button -->
+                        <span class="close">&times;</span>
+
+                        <!-- Modal Content (The Image) -->
+                        <img class="modal-content" id="img01">
+
+                        <!-- Modal Caption (Image Text) -->
+                        <!-- <div id="caption"></div> -->
+                    </div>
 
 
                 </div>
@@ -425,6 +863,96 @@
                 });
             });
         });
+
+        function showDetailsMaison() {
+            var x = document.getElementById("detailsMaison");
+            var y = document.getElementById("detailsMartin");
+            var z = document.getElementById("detailsBulle");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+                y.style.display = "none";
+                z.style.display = "none";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+        function showDetailsMartin() {
+            var y = document.getElementById("detailsMaison");
+            var x = document.getElementById("detailsMartin");
+            var z = document.getElementById("detailsBulle");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+                y.style.display = "none";
+                z.style.display = "none";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+        function showDetailsBulle() {
+            var z = document.getElementById("detailsMaison");
+            var y = document.getElementById("detailsMartin");
+            var x = document.getElementById("detailsBulle");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+                y.style.display = "none";
+                z.style.display = "none";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+        // Get the modal
+        var modal = document.getElementById('myModal');
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img = document.getElementById('myImg');
+        var img2 = document.getElementById('myImg2');
+        var img3 = document.getElementById('myImg3');
+        var img4 = document.getElementById('myImg4');
+        var img5 = document.getElementById('myImg5');
+        var img6 = document.getElementById('myImg6');
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+        img.onclick = function() {
+            modal.style.display = "block";
+            modalImg.src = "images/Photos/log-home-2225414_1920.jpg";
+            captionText.innerHTML = this.alt;
+        }
+        img2.onclick = function() {
+            modal.style.display = "block";
+            modalImg.src = "images/Photos/log-home-2225427_1920.jpg";
+            captionText.innerHTML = this.alt;
+        }
+        img3.onclick = function() {
+            modal.style.display = "block";
+            modalImg.src = "images/Photos/log-home-2225442_1920.jpg";
+            captionText.innerHTML = this.alt;
+        }
+        img4.onclick = function() {
+            modal.style.display = "block";
+            modalImg.src = "images/Photos/log-home-2225414_1920.jpg";
+            captionText.innerHTML = this.alt;
+        }
+        img5.onclick = function() {
+            modal.style.display = "block";
+            modalImg.src = "images/Photos/log-home-2225427_1920.jpg";
+            captionText.innerHTML = this.alt;
+        }
+        img6.onclick = function() {
+            modal.style.display = "block";
+            modalImg.src = "images/Photos/log-home-2225414_1920.jpg";
+            //captionText.innerHTML = this.alt;
+        }
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
     </script>
 
 
