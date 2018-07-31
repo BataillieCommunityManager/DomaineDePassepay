@@ -14,14 +14,14 @@
 /*********************************************************************************/
 
 body {
-    background: #141414;
+    background: #141414!important;
 }
 
 body,
 input,
 textarea,
 select {
-    font-family: 'Arimo', sans-serif;
+    font-family: 'Arimo', sans-serif !important;
     font-size: 11pt;
     line-height: 1.75em;
     color: #4c4c4c;

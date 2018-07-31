@@ -61,7 +61,8 @@ section {
     display: block;
 }
 
-body {
+
+/* body {
     margin: 0;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-size: 1rem;
@@ -70,7 +71,7 @@ body {
     color: #212529;
     text-align: left;
     background-color: #fafafa;
-}
+} */
 
 [tabindex="-1"]:focus {
     outline: 0 !important;
@@ -82,7 +83,9 @@ hr {
     overflow: visible;
 }
 
-h1,
+
+/* h1, */
+
 h2,
 h3,
 h4,
@@ -465,7 +468,8 @@ section {
     display: block;
 }
 
-body {
+
+/* body {
     margin: 0;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-size: 1rem;
@@ -474,7 +478,7 @@ body {
     color: #212529;
     text-align: left;
     background-color: #fafafa;
-}
+} */
 
 [tabindex="-1"]:focus {
     outline: 0 !important;
@@ -486,7 +490,9 @@ hr {
     overflow: visible;
 }
 
-h1,
+
+/* h1, */
+
 h2,
 h3,
 h4,
@@ -770,7 +776,9 @@ template {
     display: none !important;
 }
 
-h1,
+
+/* h1, */
+
 
 /* h2, */
 
@@ -791,10 +799,11 @@ h6,
     color: inherit;
 }
 
-h1,
+
+/* h1,
 .h1 {
     font-size: 2.5rem;
-}
+} */
 
 
 /* h2, */
@@ -14634,8 +14643,12 @@ textarea {
     color: #e91e63;
 }
 
-body,
-h1,
+
+/* body, */
+
+
+/* h1, */
+
 h3,
 h4,
 h5,
@@ -14649,7 +14662,9 @@ h6,
     line-height: 1.5em;
 }
 
-h1,
+
+/* h1, */
+
 h2,
 h3,
 .h1,
@@ -14674,11 +14689,12 @@ html * {
     -moz-osx-font-smoothing: grayscale;
 }
 
-h1,
+
+/* h1,
 .h1 {
     font-size: 3.3125rem;
     line-height: 1.15em;
-}
+} */
 
 
 /* h2,
@@ -17267,12 +17283,13 @@ footer .pull-center {
     text-align: center;
 }
 
-.index-page .brand h1 {
+
+/* .index-page .brand h1 {
     font-size: 4.2rem;
     font-weight: 600;
     display: inline-block;
     position: relative;
-}
+} */
 
 .index-page .brand h3 {
     font-size: 1.313rem;
