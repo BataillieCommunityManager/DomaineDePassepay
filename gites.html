@@ -24,10 +24,10 @@
 
     <script type="text/javascript" src="engine1/jquery.js"></script>
     <noscript>
-            <link rel="stylesheet" href="css/skel-noscript.css" />
-			<link rel="stylesheet" href="css/style.css" />
-            <link rel="stylesheet" href="css/style-desktop.css" />
-            <link rel="stylesheet" href="css/details.css" />
+        <link rel="stylesheet" href="css/skel-noscript.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style-desktop.css" />
+        <link rel="stylesheet" href="css/details.css" />
     </noscript>
     <link href="css/material-kit.css?v=2.0.4" rel="stylesheet" />
     <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
@@ -120,7 +120,7 @@
         
         .container {
             padding: 0 16px;
-            width: 100%!important;
+            width: 100% !important;
         }
         /* Clear floats */
         
@@ -297,39 +297,47 @@
                     <div class="row">
                         <div class="column">
                             <div class="card">
-                                <img src="images/Photos/cabin-1081733_1920.jpg" alt="Maison du Pêcheur" style="width:100%">
+                                <img src="images/Photos/la-maison-du-pecheur.jpg" alt="Maison du Pêcheur" style="width:100%">
                                 <div class="container">
                                     <h2>La Maison du Pêcheur</h2>
                                     <p class="title">3 à 6 personnes</p>
                                     <p>3 chambres</p>
                                     <p>3 lits doubles + 2 lits simples</p>
-                                    <p><button class="button" onclick="showDetailsMaison()">Afficher les détails du gîte</button></p>
+                                    <p><a href="#detailsMaison"><button class="button"
+                                                onclick="showDetailsMaison()">Afficher les détails du gîte</button></a>
+                                    </p>
                                 </div>
                             </div>
                         </div>
 
                         <div class="column">
                             <div class="card">
-                                <img src="images/Photos/cabin-1081733_1920.jpg" alt="Martin Pêcheur" style="width:100%">
+                                <img src="images/Photos/le-martin-pecheur.jpg" alt="Martin Pêcheur" style="width:100%">
                                 <div class="container">
                                     <h2>Le Martin Pêcheur</h2>
                                     <p class="title">3 à 6 personnes</p>
                                     <p>3 chambres</p>
                                     <p>3 lits doubles + 2 lits simples</p>
-                                    <p><button class="button" onclick="showDetailsMartin()">Afficher les détails du gîte</button></p>
+                                    <p>
+                                        <a href="#detailsMartin"><button class="button"
+                                                onclick="showDetailsMartin()">Afficher les détails du
+                                                gîte</button></a>
+                                    </p>
                                 </div>
                             </div>
                         </div>
 
                         <div class="column">
                             <div class="card">
-                                <img src="images/Photos/cabin-1081733_1920.jpg" alt="Bulle" style="width:100%">
+                                <img src="images/Photos/la-bulle.jpg" alt="Bulle" style="width:100%">
                                 <div class="container">
                                     <h2>La Bulle</h2>
                                     <p class="title">2 personnes</p>
                                     <p>Studio</p>
                                     <p>1 lit double</p>
-                                    <p><button class="button" onclick="showDetailsBulle()">Afficher les détails du gîte</button></p>
+                                    <p><a href="#detailsBulle"><button class="button"
+                                                onclick="showDetailsBulle()">Afficher les détails du
+                                                gîte</button></a></p>
                                 </div>
                             </div>
                         </div>
@@ -373,7 +381,7 @@
                                     <div class="tab-pane active" id="amenagement">
                                         <h4>Informations Générales</h4>
                                         <ul>
-                                            <li>Capacité maximale 6 personnes</li>
+                                            <li>Capacité : 6 personnes</li>
                                             <li>Surface : 131,40 m²</li>
                                             <li>Altitude : 31,53m</li>
                                             <li>3 Chambres</li>
@@ -381,6 +389,7 @@
                                             <li>Salle de douche</li>
                                             <li>Toilettes séparées</li>
                                             <li>Terrasse</li>
+                                            <li>Animaux : à discuter</li>
                                         </ul>
                                         <h4>Chambre 1</h4>
                                         <ul>
@@ -400,13 +409,20 @@
                                     <div class="tab-pane" id="interieur">
                                         <h4>À votre disposition dans votre gîte</h4>
                                         <ul>
-                                            <li>Frigidaire</li>
-                                            <li>Lave-Vaisselle</li>
+                                            <li>Frigidaire (avec congélateur)</li>
                                             <li>Lave-Linge</li>
-                                            <li>Cafetière</li>
                                             <li>Four</li>
+                                            <li>Gazinière</li>
                                             <li>Micro-ondes</li>
                                             <li>TV</li>
+                                            <li>Grille pain</li>
+                                            <li>Cafetière</li>
+                                            <li>Bouilloire</li>
+                                            <li>Ustensiles, casseroles, plats, vaisselle</li>
+                                            <li>Evier double</li>
+                                            <li>Fer et Table à repasser</li>
+                                            <li>Sèche-cheuveux</li>
+                                            <li>Rangements / Placards / Penderies</li>
                                             <li>Draps et linge de toilette inclus</li>
                                         </ul>
                                     </div>
@@ -418,15 +434,18 @@
                                             <li>Salon de Jardin</li>
                                             <li>Chaises-longues</li>
                                             <li>Parc Arboré</li>
+                                            <li>Etendoir</li>
+                                            <li>Terrain de pétanque collectif</li>
                                         </ul>
                                     </div>
                                     <div class="tab-pane" id="services">
                                         <h4>Nos services pour rendre votre séjour plus agréable</h4>
                                         <ul>
                                             <li>Équipements pour bébé (lit, chaise haute, change bébé...)</li>
-                                            <li>Location draps / linge de toilette (inclus dans le prix de la location)</li>
+                                            <li>Location draps / linge de toilette (inclus dans le prix de la location)
+                                            </li>
                                             <li>Chauffage central au gaz</li>
-                                            <li>Forfait ménage en fin de séjour (50€ / séjour)</li>
+                                            <li>Ménage inclus dans le prix</li>
                                             <li>Pêche (voir tarifs)</li>
                                         </ul>
                                     </div>
@@ -490,7 +509,7 @@
                                     <div class="tab-pane active" id="amenagement2">
                                         <h4>Informations Générales</h4>
                                         <ul>
-                                            <li>Capacité maximale 6 personnes</li>
+                                            <li>Capacité : 6 personnes</li>
                                             <li>Surface : 116,23 m²</li>
                                             <li>Altitude : 31,53m</li>
                                             <li>3 Chambres</li>
@@ -517,13 +536,19 @@
                                     <div class="tab-pane" id="interieur2">
                                         <h4>À votre disposition dans votre gîte</h4>
                                         <ul>
-                                            <li>Frigidaire</li>
-                                            <li>Lave-Vaisselle</li>
+                                            <li>Frigidaire (avec congélateur)</li>
                                             <li>Lave-Linge</li>
-                                            <li>Cafetière</li>
                                             <li>Four</li>
+                                            <li>Gazinière</li>
                                             <li>Micro-ondes</li>
                                             <li>TV</li>
+                                            <li>Grille pain</li>
+                                            <li>Cafetière</li>
+                                            <li>Bouilloire</li>
+                                            <li>Ustensiles, casseroles, plats, vaisselle</li>
+                                            <li>Fer et Table à repasser</li>
+                                            <li>Sèche-cheuveux</li>
+                                            <li>Rangements / Placards / Penderies</li>
                                             <li>Draps et linge de toilette inclus</li>
                                         </ul>
                                     </div>
@@ -533,18 +558,18 @@
                                             <li>Terrasse</li>
                                             <li>Barbecue</li>
                                             <li>Salon de Jardin</li>
-                                            <li>Chaises-longues</li>
                                             <li>Parc Arboré</li>
-                                            <li>Grange pour rangements extérieurs</li>
+                                            <li>Terrain de pétanque collectif</li>
                                         </ul>
                                     </div>
                                     <div class="tab-pane" id="services2">
                                         <h4>Nos services pour rendre votre séjour plus agréable</h4>
                                         <ul>
                                             <li>Équipements pour bébé (lit, chaise haute, change bébé...)</li>
-                                            <li>Location draps / linge de toilette (inclus dans le prix de la location)</li>
+                                            <li>Location draps / linge de toilette (inclus dans le prix de la location)
+                                            </li>
                                             <li>Chauffage et Climatisation réversible</li>
-                                            <li>Forfait ménage en fin de séjour (50€ / séjour)</li>
+                                            <li>Forfait ménage inclus</li>
                                             <li>Pêche (voir tarifs)</li>
                                         </ul>
                                     </div>
@@ -573,7 +598,7 @@
 
                     </div>
                     <div class="container bootstrap snippet" style="margin-top:40px; display:none;" id="detailsBulle">
-                        <h3>Le Martin Pêcheur</h3>
+                        <h3>La Bulle</h3>
                         <div class="row">
                             <div class="col-md-3">
                                 <ul class="nav nav-pills nav-pills-icons flex-column" role="tablist">
@@ -609,7 +634,7 @@
                                     <div class="tab-pane active" id="amenagement3">
                                         <h4>Informations Générales</h4>
                                         <ul>
-                                            <li>Capacité maximale 2 personnes (+ 1 enfant bas âge)</li>
+                                            <li>Capacité : 2 personnes (+ 1 enfant bas âge)</li>
                                             <li>Surface : 45 m²</li>
                                             <li>Altitude : 31,53m</li>
                                             <li>Studio</li>
@@ -624,13 +649,19 @@
                                     <div class="tab-pane" id="interieur3">
                                         <h4>À votre disposition dans votre gîte</h4>
                                         <ul>
-                                            <li>Frigidaire</li>
-                                            <li>Lave-Vaisselle</li>
+                                            <li>Frigidaire (avec congélateur)</li>
                                             <li>Lave-Linge</li>
-                                            <li>Cafetière</li>
                                             <li>Four</li>
+                                            <li>Gazinière (2 feux)</li>
                                             <li>Micro-ondes</li>
                                             <li>TV</li>
+                                            <li>Grille pain</li>
+                                            <li>Cafetière</li>
+                                            <li>Bouilloire</li>
+                                            <li>Ustensiles, casseroles, plats, vaisselle</li>
+                                            <li>Fer et Table à repasser</li>
+                                            <li>Sèche-cheuveux</li>
+                                            <li>Rangements / Placards / Penderies</li>
                                             <li>Draps et linge de toilette inclus</li>
                                         </ul>
                                     </div>
@@ -642,15 +673,17 @@
                                             <li>Chaises-longues</li>
                                             <li>Parc Arboré</li>
                                             <li>Local extérieur</li>
+                                            <li>Terrain de pétanque collectif</li>
                                         </ul>
                                     </div>
                                     <div class="tab-pane" id="services3">
                                         <h4>Nos services pour rendre votre séjour plus agréable</h4>
                                         <ul>
                                             <li>Équipements pour bébé (lit, chaise haute, change bébé...)</li>
-                                            <li>Location draps / linge de toilette (inclus dans le prix de la location)</li>
+                                            <li>Location draps / linge de toilette (inclus dans le prix de la location)
+                                            </li>
                                             <li>Chauffage électrique</li>
-                                            <li>Forfait ménage en fin de séjour (50€ / séjour)</li>
+                                            <li>Forfait ménage inclus</li>
                                             <li>Pêche (voir tarifs)</li>
                                         </ul>
                                     </div>
@@ -714,67 +747,73 @@
                                         <article class="col-md-4 col-sm-6 portfolio-item maison">
                                             <div class="portfolio-thumb in">
                                                 <a href="#" class="main-link">
-                                                    <img class="img-responsive img-center" src="images/Photos/log-home-2225414_1920.jpg" width="100%" alt="">
-                                                    <h2 class="project-title">Chambre 1</h2>
+                                                    <img class="img-responsive img-center" src="images/Photos/la-maison-du-pecheur.jpg" width="100%" alt="">
+                                                    <h2 class="project-title">La maison du pêcheur</h2>
                                                     <span class="overlay-mask"></span>
                                                 </a>
-                                                <a id="myImg" class="link centered" href="#portfolio"><i class="fa fa-eye fa-fw"></i></a>
+                                                <a id="myImg" class="link centered" href="#portfolio"><i
+                                                        class="fa fa-eye fa-fw"></i></a>
                                             </div>
                                         </article>
 
                                         <article class="col-md-4 col-sm-6 portfolio-item martin">
                                             <div class="portfolio-thumb in">
                                                 <a href="#" class="main-link">
-                                                    <img class="img-responsive img-center" src="images/Photos/log-home-2225427_1920.jpg" width="100%" alt="">
-                                                    <h2 class="project-title">Salle de Bain</h2>
+                                                    <img class="img-responsive img-center" src="images/Photos/le-martin-pecheur.jpg" width="100%" alt="">
+                                                    <h2 class="project-title">Le martin pêcheur</h2>
                                                     <span class="overlay-mask"></span>
                                                 </a>
-                                                <a id="myImg2" class="link centered" href="#portfolio"><i class="fa fa-eye fa-fw"></i></a>
+                                                <a id="myImg2" class="link centered" href="#portfolio"><i
+                                                        class="fa fa-eye fa-fw"></i></a>
                                             </div>
                                         </article>
 
                                         <article class="col-md-4 col-sm-6 portfolio-item bulle">
                                             <div class="portfolio-thumb in">
                                                 <a href="#" class="main-link">
-                                                    <img class="img-responsive img-center" src="images/Photos/log-home-2225442_1920.jpg" width="100%" alt="">
-                                                    <h2 class="project-title">Pièce de vie</h2>
+                                                    <img class="img-responsive img-center" src="images/Photos/la-bulle.jpg" width="100%" alt="">
+                                                    <h2 class="project-title">La bulle</h2>
                                                     <span class="overlay-mask"></span>
                                                 </a>
-                                                <a id="myImg3" class="link centered" href="#portfolio"><i class="fa fa-eye fa-fw"></i></a> </div>
+                                                <a id="myImg3" class="link centered" href="#portfolio"><i
+                                                        class="fa fa-eye fa-fw"></i></a> </div>
                                         </article>
 
-                                        <article class="col-md-4 col-sm-6 portfolio-item martin">
+                                        <article class="col-md-4 col-sm-6 portfolio-item martin maison bulle">
                                             <div class="portfolio-thumb in">
                                                 <a href="#" class="main-link">
-                                                    <img class="img-responsive img-center" src="images/Photos/log-home-2225414_1920.jpg" width="100%" alt="">
-                                                    <h2 class="project-title">Chambre 2</h2>
+                                                    <img class="img-responsive img-center" src="images/Photos/table1.jpg" width="100%" alt="">
+                                                    <h2 class="project-title">Terrasse</h2>
                                                     <span class="overlay-mask"></span>
                                                 </a>
-                                                <a id="myImg4" class="link centered" href="#portfolio"><i class="fa fa-eye fa-fw"></i></a>
+                                                <a id="myImg4" class="link centered" href="#portfolio"><i
+                                                        class="fa fa-eye fa-fw"></i></a>
                                             </div>
                                         </article>
 
-                                        <article class="col-md-4 col-sm-6 portfolio-item bulle">
+                                        <article class="col-md-4 col-sm-6 portfolio-item martin maison bulle">
                                             <div class="portfolio-thumb in">
                                                 <a href="#" class="main-link">
-                                                    <img class="img-responsive img-center" src="images/Photos/log-home-2225427_1920.jpg" width="100%" alt="">
-                                                    <h2 class="project-title">Salle de Bain</h2>
+                                                    <img class="img-responsive img-center" src="images/Photos/table2.jpg" width="100%" alt="">
+                                                    <h2 class="project-title">Terrasse</h2>
                                                     <span class="overlay-mask"></span>
                                                 </a>
-                                                <a id="myImg5" class="link centered" href="#portfolio"><i class="fa fa-eye fa-fw"></i></a>
+                                                <a id="myImg5" class="link centered" href="#portfolio"><i
+                                                        class="fa fa-eye fa-fw"></i></a>
                                             </div>
                                         </article>
 
-                                        <article class="col-md-4 col-sm-6 portfolio-item maison">
+                                        <!-- <article class="col-md-4 col-sm-6 portfolio-item martin maison bulle">
                                             <div class="portfolio-thumb in">
                                                 <a href="#" class="main-link">
                                                     <img class="img-responsive img-center" src="images/Photos/log-home-2225414_1920.jpg" width="100%" alt="">
                                                     <h2 class="project-title">Chambre 3</h2>
                                                     <span class="overlay-mask"></span>
                                                 </a>
-                                                <a id="myImg6" class="link centered" href="#portfolio"><i class="fa fa-eye fa-fw"></i></a>
+                                                <a id="myImg6" class="link centered" href="#portfolio"><i
+                                                        class="fa fa-eye fa-fw"></i></a>
                                             </div>
-                                        </article>
+                                        </article> -->
                                     </div>
                                 </div>
                             </div>
@@ -917,34 +956,34 @@
         var captionText = document.getElementById("caption");
         img.onclick = function() {
             modal.style.display = "block";
-            modalImg.src = "images/Photos/log-home-2225414_1920.jpg";
+            modalImg.src = "images/Photos/la-maison-du-pecheur.jpg";
             captionText.innerHTML = this.alt;
         }
         img2.onclick = function() {
             modal.style.display = "block";
-            modalImg.src = "images/Photos/log-home-2225427_1920.jpg";
+            modalImg.src = "images/Photos/le-martin-pecheur.jpg";
             captionText.innerHTML = this.alt;
         }
         img3.onclick = function() {
             modal.style.display = "block";
-            modalImg.src = "images/Photos/log-home-2225442_1920.jpg";
+            modalImg.src = "images/Photos/la-bulle.jpg";
             captionText.innerHTML = this.alt;
         }
         img4.onclick = function() {
             modal.style.display = "block";
-            modalImg.src = "images/Photos/log-home-2225414_1920.jpg";
+            modalImg.src = "images/Photos/table.jpg";
             captionText.innerHTML = this.alt;
         }
         img5.onclick = function() {
-            modal.style.display = "block";
-            modalImg.src = "images/Photos/log-home-2225427_1920.jpg";
-            captionText.innerHTML = this.alt;
-        }
-        img6.onclick = function() {
-            modal.style.display = "block";
-            modalImg.src = "images/Photos/log-home-2225414_1920.jpg";
-            //captionText.innerHTML = this.alt;
-        }
+                modal.style.display = "block";
+                modalImg.src = "images/Photos/table2.jpg";
+                captionText.innerHTML = this.alt;
+            }
+            // img6.onclick = function() {
+            //     modal.style.display = "block";
+            //     modalImg.src = "images/Photos/log-home-2225414_1920.jpg";
+            //     //captionText.innerHTML = this.alt;
+            // }
 
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close")[0];
@@ -953,6 +992,27 @@
         span.onclick = function() {
             modal.style.display = "none";
         }
+
+
+        $(function() {
+            /**
+             * Smooth scrolling to page anchor on click
+             **/
+            $("a[href*='#']:not([href='#'])").click(function() {
+                if (
+                    location.hostname == this.hostname &&
+                    this.pathname.replace(/^\//, "") == location.pathname.replace(/^\//, "")
+                ) {
+                    var anchor = $(this.hash);
+                    anchor = anchor.length ? anchor : $("[name=" + this.hash.slice(1) + "]");
+                    if (anchor.length) {
+                        $("html, body").animate({
+                            scrollTop: anchor.offset().top
+                        }, 1500);
+                    }
+                }
+            });
+        });
     </script>
 
 
