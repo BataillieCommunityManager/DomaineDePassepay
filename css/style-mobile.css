@@ -168,7 +168,7 @@ article:first-child {
 /*********************************************************************************/
 
 #header {
-    padding: 6em 0em 4em 0em;
+    padding: 6em 0em 1em 0em;
     text-align: center;
 }
 
@@ -210,6 +210,29 @@ article:first-child {
 
 #nav {
     display: none;
+}
+
+#nav-mobile>#navbarNav>ul>li>a,
+#nav-mobile>#navbarNav>ul>li>span {
+    display: block;
+    padding: 1em 1.5em;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 200;
+    font-size: 1em;
+    outline: 0;
+    color: rgba(255, 255, 255, .7);
+}
+
+#nav-mobile>#navbarNav>ul>li>a:hover {
+    color: #FFF;
+}
+
+#nav-mobile>#navbarNav li.active a {
+    background: none;
+    color: #FFF;
+    font-weight: bold;
 }
 
 
